@@ -25,8 +25,6 @@ class App extends Component {
   addStudent = (newStudent) => {
     console.log(newStudent);
     // POST your data here
-<<<<<<< HEAD
-=======
     axios({
       method: 'POST',
       url: '/students',
@@ -39,7 +37,6 @@ class App extends Component {
         console.log('err:', err);
         alert('Ailea messed up the Post.');
       });
->>>>>>> develop
   };
 
   render() {
