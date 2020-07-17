@@ -6,7 +6,7 @@ import StudentList from '../StudentList/StudentList';
 
 class App extends Component {
   state = {
-    studentList: [{ name: 'Shelby' }, { name: 'Alex' }, { name: 'Ailea' }],
+    studentList: [],
   };
 
   getStudents() {
@@ -15,7 +15,10 @@ class App extends Component {
       url: '/students',
     })
       .then((response) => {
-        //something goes here
+        this.setState({
+          ...this.state.studentList,
+          studentList: response.data,
+        });
       })
       .catch((err) => {
         alert('Wuh-oahhh, you messed up!', err);
