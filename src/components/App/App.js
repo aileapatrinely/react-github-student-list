@@ -8,10 +8,25 @@ class App extends Component {
     studentList: [],
   };
 
+  getStudents() {
+    axios({
+      method: 'GET',
+      url: '/students',
+    })
+      .then((response) => {
+        //something goes here
+      })
+      .catch((err) => {
+        alert('Wuh-oahhh, you messed up!', err);
+      });
+  }
+
   // This function is called by the StudentForm when the submit button is pressed
   addStudent = (newStudent) => {
     console.log(newStudent);
     // POST your data here
+<<<<<<< HEAD
+=======
     axios({
       method: 'POST',
       url: '/students',
@@ -24,6 +39,7 @@ class App extends Component {
         console.log('err:', err);
         alert('Ailea messed up the Post.');
       });
+>>>>>>> develop
   };
 
   render() {
@@ -35,7 +51,7 @@ class App extends Component {
         <br />
         <StudentForm addStudent={this.addStudent} />
 
-        <p>Student list goes here.</p>
+        <StudentList studentList={this.studentList} />
       </div>
     );
   }
