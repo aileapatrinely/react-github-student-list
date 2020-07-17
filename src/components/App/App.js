@@ -25,6 +25,21 @@ class App extends Component {
   addStudent = (newStudent) => {
     console.log(newStudent);
     // POST your data here
+<<<<<<< HEAD
+=======
+    axios({
+      method: 'POST',
+      url: '/students',
+      data: newStudent,
+    })
+      .then((response) => {
+        this.getStudents();
+      })
+      .catch((err) => {
+        console.log('err:', err);
+        alert('Ailea messed up the Post.');
+      });
+>>>>>>> develop
   };
 
   render() {
