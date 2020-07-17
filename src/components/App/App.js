@@ -12,7 +12,19 @@ class App extends Component {
   addStudent = (newStudent) => {
     console.log(newStudent);
     // POST your data here
-  }
+    axios({
+      method: 'POST',
+      url: '/students',
+      data: newStudent,
+    })
+      .then((response) => {
+        this.getStudents();
+      })
+      .catch((err) => {
+        console.log('err:', err);
+        alert('Ailea messed up the Post.');
+      });
+  };
 
   render() {
     return (
@@ -20,8 +32,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">GitHub Student List</h1>
         </header>
-        <br/>
-        <StudentForm addStudent={this.addStudent}/>
+        <br />
+        <StudentForm addStudent={this.addStudent} />
 
         <p>Student list goes here.</p>
       </div>
