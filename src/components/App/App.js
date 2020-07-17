@@ -8,11 +8,24 @@ class App extends Component {
     studentList: [],
   };
 
+  getStudents() {
+    axios({
+      method: 'GET',
+      url: '/students',
+    })
+      .then((response) => {
+        //something goes here
+      })
+      .catch((err) => {
+        alert('Wuh-oahhh, you messed up!', err);
+      });
+  }
+
   // This function is called by the StudentForm when the submit button is pressed
   addStudent = (newStudent) => {
     console.log(newStudent);
     // POST your data here
-  }
+  };
 
   render() {
     return (
@@ -20,8 +33,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">GitHub Student List</h1>
         </header>
-        <br/>
-        <StudentForm addStudent={this.addStudent}/>
+        <br />
+        <StudentForm addStudent={this.addStudent} />
 
         <p>Student list goes here.</p>
       </div>
