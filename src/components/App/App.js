@@ -36,7 +36,7 @@ class App extends Component {
         <br />
         <StudentForm addStudent={this.addStudent} />
 
-        <p>Student list goes here.</p>
+        <StudentList studentList={this.studentList} />
       </div>
     );
   }
