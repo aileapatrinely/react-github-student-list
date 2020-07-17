@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import StudentForm from '../StudentForm/StudentForm';
+import StudentList from '../StudentList/StudentList';
 
 class App extends Component {
   state = {
-    studentList: [],
+    studentList: [{ name: 'Shelby' }, { name: 'Alex' }, { name: 'Ailea' }],
   };
 
   getStudents() {
@@ -48,7 +49,7 @@ class App extends Component {
         <br />
         <StudentForm addStudent={this.addStudent} />
 
-        <StudentList studentList={this.studentList} />
+        <StudentList studentList={this.state.studentList} />
       </div>
     );
   }
