@@ -26,7 +26,6 @@ class App extends Component {
   addStudent = (newStudent) => {
     console.log(newStudent);
     // POST your data here
-
     axios({
       method: 'POST',
       url: '/students',
